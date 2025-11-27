@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmsl63eakhnkd"]
+
+[ext_resource type="Texture2D" uid="uid://b3poshx100tdg" path="res://icon.svg" id="1_710o4"]
+[ext_resource type="Script" uid="uid://d11fideabs5ir" path="res://Scenes/Entity/arena_enemy.gd" id="1_kghg2"]
+
+[node name="ArenaEnemy" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kghg2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_710o4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -108.0
+offset_right = 25.0
+offset_bottom = -85.0
+text = "Enemy"
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = -131.0
+offset_top = 75.0
+offset_right = 131.0
+offset_bottom = 102.0
+value = 100.0
