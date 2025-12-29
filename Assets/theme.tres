@@ -1,0 +1,62 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dgm6kf3gj0axj"]
+
+[ext_resource type="Texture2D" uid="uid://7hx5rlwx6bf3" path="res://Assets/UI Assets pack_v.1_st/UI.png" id="1_0dftj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5t51"]
+atlas = ExtResource("1_0dftj")
+region = Rect2(288, 16, 48, 47)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_10rey"]
+texture = SubResource("AtlasTexture_h5t51")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dftj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dftj"]
+atlas = ExtResource("1_0dftj")
+region = Rect2(769, 18, 46, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5t51"]
+texture = SubResource("AtlasTexture_0dftj")
+texture_margin_left = 16.0
+texture_margin_top = 4.0
+texture_margin_right = 9.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5t51"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yyeo"]
+atlas = ExtResource("1_0dftj")
+region = Rect2(769, 50, 46, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7yyeo"]
+texture = SubResource("AtlasTexture_7yyeo")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10rey"]
+atlas = ExtResource("1_0dftj")
+region = Rect2(288, 16, 48, 47)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w53sr"]
+texture = SubResource("AtlasTexture_10rey")
+texture_margin_left = 6.0
+texture_margin_top = 8.0
+texture_margin_right = 6.0
+texture_margin_bottom = 8.0
+
+[resource]
+DefaultPanel/base_type = &"PanelContainer"
+DefaultPanel/styles/panel = SubResource("StyleBoxTexture_10rey")
+HealthBar/base_type = &"ProgressBar"
+HealthBar/styles/background = SubResource("StyleBoxEmpty_0dftj")
+HealthBar/styles/fill = SubResource("StyleBoxTexture_h5t51")
+ManaBar/base_type = &"ProgressBar"
+ManaBar/styles/background = SubResource("StyleBoxEmpty_h5t51")
+ManaBar/styles/fill = SubResource("StyleBoxTexture_7yyeo")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_w53sr")

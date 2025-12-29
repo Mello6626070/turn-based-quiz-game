@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhcblfwnbrpfr"]
+
+[ext_resource type="Script" uid="uid://bqwyi7q5xvogg" path="res://Scripts/player/player_class/swordsmsan_class.gd" id="1_dpdcl"]
+[ext_resource type="Texture2D" uid="uid://b06ag6o0t6gg4" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-swrd-drw-00.png" id="2_fk7ge"]
+[ext_resource type="Texture2D" uid="uid://cgf16vglgkuij" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-2-00.png" id="3_6cp5c"]
+[ext_resource type="Texture2D" uid="uid://blg0gejbovqyi" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-2-01.png" id="4_g1ri4"]
+[ext_resource type="Texture2D" uid="uid://d2ufeotlwlvlu" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-2-02.png" id="5_qb8pb"]
+[ext_resource type="Texture2D" uid="uid://c1ee2xxjyhc43" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-2-03.png" id="6_0r2s8"]
+[ext_resource type="Texture2D" uid="uid://bs07gipenoj6k" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-swrd-drw-01.png" id="7_vsuno"]
+[ext_resource type="Texture2D" uid="uid://dy381o4fl56mq" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-swrd-drw-02.png" id="8_d0f7j"]
+[ext_resource type="Texture2D" uid="uid://uxm7l516xxkm" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-swrd-drw-03.png" id="9_eboqe"]
+[ext_resource type="Texture2D" uid="uid://6fyh1fkc2w7" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-swrd-shte-00.png" id="10_tu867"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3dn6o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fk7ge")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6cp5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g1ri4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qb8pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0r2s8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fk7ge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vsuno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d0f7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eboqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tu867")
+}],
+"loop": false,
+"name": &"unsheath",
+"speed": 5.0
+}]
+
+[node name="SwordsmsanClass" type="Node2D"]
+script = ExtResource("1_dpdcl")
+
+[node name="PlayerSwordsman" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_3dn6o")
+animation = &"idle"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.90785724

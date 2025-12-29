@@ -1,0 +1,182 @@
+[gd_scene load_steps=28 format=3 uid="uid://d1vdld22ypi6p"]
+
+[ext_resource type="Script" uid="uid://b6wjh3vkh3yp4" path="res://Scripts/player/player_movement_controller.gd" id="1_1uogl"]
+[ext_resource type="Texture2D" uid="uid://vuq2ny58d4as" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-fall-00.png" id="1_dj1cc"]
+[ext_resource type="Texture2D" uid="uid://cg1m053bkglvs" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-fall-01.png" id="2_1uogl"]
+[ext_resource type="Texture2D" uid="uid://bdqioibwtmfmw" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-smrslt-00.png" id="3_14yui"]
+[ext_resource type="Texture2D" uid="uid://55mquyfnyy6t" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-run-punch-01.png" id="4_627cv"]
+[ext_resource type="Texture2D" uid="uid://b7rp136d34cf" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-smrslt-01.png" id="4_tikcl"]
+[ext_resource type="Texture2D" uid="uid://cppcfnx23u2fy" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-smrslt-02.png" id="5_5hk5m"]
+[ext_resource type="Texture2D" uid="uid://b3efkq7e7vk0r" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-run-punch-02.png" id="5_wbghj"]
+[ext_resource type="Texture2D" uid="uid://cfwo5stqutkjq" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-smrslt-03.png" id="6_8ibks"]
+[ext_resource type="Texture2D" uid="uid://dnhi7e2ke3ioi" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-00.png" id="7_5v12h"]
+[ext_resource type="Texture2D" uid="uid://pdw4c3fqy1ig" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-01.png" id="8_627cv"]
+[ext_resource type="Texture2D" uid="uid://ci8xd1i0lajln" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-02.png" id="9_wbghj"]
+[ext_resource type="Texture2D" uid="uid://b73nkmq8ydn21" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-03.png" id="10_stkns"]
+[ext_resource type="Texture2D" uid="uid://cav0ljhuihy7d" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-jump-00.png" id="11_5ch6t"]
+[ext_resource type="Texture2D" uid="uid://b4b7am2nwp4e7" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-jump-01.png" id="12_3v8ry"]
+[ext_resource type="Texture2D" uid="uid://hk2c7h71bljg" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-jump-02.png" id="13_aq5xf"]
+[ext_resource type="Texture2D" uid="uid://yit7yfa0poft" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-jump-03.png" id="14_prcox"]
+[ext_resource type="Texture2D" uid="uid://c6x5yn83d1qpk" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-run-00.png" id="15_o88tu"]
+[ext_resource type="Texture2D" uid="uid://dcwdsmpyodbjq" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-run-01.png" id="16_mimrg"]
+[ext_resource type="Texture2D" uid="uid://bqcsvyt4virpm" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-run-02.png" id="17_eikdu"]
+[ext_resource type="Texture2D" uid="uid://0j2iwcno01pq" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-run-03.png" id="18_53d67"]
+[ext_resource type="Texture2D" uid="uid://dvbcfakedv08x" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-run-04.png" id="19_dn461"]
+[ext_resource type="Texture2D" uid="uid://b5uu78uwpja7x" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-run-05.png" id="20_pihqi"]
+[ext_resource type="Texture2D" uid="uid://br2o40j1tx2f2" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-wall-slide-00.png" id="22_tikcl"]
+[ext_resource type="Texture2D" uid="uid://ckjyddpxm5x7q" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-wall-slide-01.png" id="23_5hk5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1d0ep"]
+size = Vector2(10, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2b8m8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_627cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wbghj")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dj1cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1uogl")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_14yui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tikcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5hk5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8ibks")
+}],
+"loop": false,
+"name": &"flip",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5v12h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_627cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wbghj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_stkns")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_5ch6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3v8ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aq5xf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_prcox")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_o88tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mimrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_eikdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_53d67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_dn461")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_pihqi")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_tikcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5hk5m")
+}],
+"loop": true,
+"name": &"wall_slide",
+"speed": 5.0
+}]
+
+[node name="PlayerMovementController" type="CharacterBody2D"]
+collision_mask = 11
+script = ExtResource("1_1uogl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13.5)
+shape = SubResource("RectangleShape2D_1d0ep")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -17)
+sprite_frames = SubResource("SpriteFrames_2b8m8")
+animation = &"dash"
+frame = 1
+frame_progress = 1.0
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+one_shot = true
+
+[node name="WallRayCast" type="RayCast2D" parent="."]
+position = Vector2(0, -23.045)
+target_position = Vector2(13.005, 0)
+collision_mask = 2
+
+[node name="DashTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+one_shot = true
+
+[node name="CameraContainer" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="CameraContainer"]
+zoom = Vector2(2, 2)
+limit_enabled = false
+limit_smoothed = true
