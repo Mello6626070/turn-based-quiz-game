@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dynusvltb71l6"]
+
+[ext_resource type="Theme" uid="uid://dgm6kf3gj0axj" path="res://Assets/theme.tres" id="1_u0rnp"]
+[ext_resource type="Script" uid="uid://b1esl8yd2sxva" path="res://Scripts/battlearena/skill_panel.gd" id="2_k202i"]
+
+[node name="SkillPanel" type="PanelContainer"]
+size_flags_horizontal = 3
+theme = ExtResource("1_u0rnp")
+theme_type_variation = &"SkillPanel"
+script = ExtResource("2_k202i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SkillNameLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24313726, 0.19607843, 0.16470589, 1)
+text = "Basic Slash"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="DamageLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "DMG: 16"
+
+[node name="ManaCostLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "MAN: 24"
+
+[node name="SelectButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "SELECT"
+
+[connection signal="pressed" from="VBoxContainer/SelectButton" to="." method="_on_select_button_pressed"]

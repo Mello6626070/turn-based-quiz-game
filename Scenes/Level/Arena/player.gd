@@ -1,6 +1,7 @@
 extends Node2D
 
 var health: float = 100.0
+var mana: float = 100.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

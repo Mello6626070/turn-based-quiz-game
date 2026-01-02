@@ -16,15 +16,14 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=960
-window/size/viewport_height=540
-window/size/mode=2
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [gui]
 
-theme/custom_font="uid://dhxuql2yk33xy"
+theme/default_font_antialiasing=0
+theme/custom_font="uid://dvn5okksqox3p"
 
 [input]
 

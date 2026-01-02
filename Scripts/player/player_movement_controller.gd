@@ -20,15 +20,15 @@ enum STATE {
 
 const FALL_GRAVITY: float =  1500.0
 const FALL_VELOCITY: float = 500.0
-const WALK_VELOCITY: float = 200.0
-const JUMP_VELOCITY: float = -600.0
+const WALK_VELOCITY: float = 300.0
+const JUMP_VELOCITY: float = -500.0
 const JUMP_DECELERATION: float = 1500.0
 const DOUBLE_JUMP_VELOCITY: float = -450.0
 const WALL_SLIDE_GRAVITY: float = 300.0
 const WALL_SLIDE_VELOCITY: float = 500.0
 const WALL_JUMP_LENGHT: float = 30.0
 const WALL_JUMP_VELOCITY: float = -500.0
-const DASH_LENGHT: float = 100.0
+const DASH_LENGHT: float = 150.0
 const DASH_VELOCITY: float = 600.0
 
 var current_state: STATE = STATE.FALL
