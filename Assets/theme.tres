@@ -4,28 +4,36 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0dftj"]
 atlas = ExtResource("1_0dftj")
-region = Rect2(193, 129, 14, 13)
+region = Rect2(145, 129, 46, 14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5t51"]
 texture = SubResource("AtlasTexture_0dftj")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aygfs"]
 atlas = ExtResource("1_0dftj")
-region = Rect2(145, 129, 46, 13)
+region = Rect2(145, 129, 46, 14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p5cll"]
 texture = SubResource("AtlasTexture_aygfs")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
-texture_margin_bottom = 2.0
+texture_margin_bottom = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7yyeo"]
 atlas = ExtResource("1_0dftj")
-region = Rect2(257, 130, 14, 13)
+region = Rect2(209, 130, 46, 13)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5rsk0"]
 texture = SubResource("AtlasTexture_7yyeo")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0dftj"]
 texture_margin_left = 4.0

@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="PlayerClass" load_steps=7 format=3 uid="uid://ue1tb4aawkdc"]
+
+[ext_resource type="PackedScene" uid="uid://cphkcwqnmiffo" path="res://Scenes/player/player_class/Swordsman/swordsman.tscn" id="1_bka2y"]
+[ext_resource type="Script" uid="uid://pxechihkx7g8" path="res://Scripts/player/player_class/player_class.gd" id="1_fptma"]
+[ext_resource type="Script" uid="uid://87urgrldu7fp" path="res://Scripts/player/skill.gd" id="2_7x7kn"]
+
+[sub_resource type="Resource" id="Resource_bka2y"]
+script = ExtResource("2_7x7kn")
+skill_name = "Slash"
+damage = 20.0
+mana_cost = 10.0
+animation_name = "slash"
+burst_number = 1
+metadata/_custom_type_script = "uid://87urgrldu7fp"
+
+[sub_resource type="Resource" id="Resource_n073b"]
+script = ExtResource("2_7x7kn")
+skill_name = "Three Fold Slash"
+damage = 50.0
+mana_cost = 40.0
+animation_name = "three_fold_slash"
+burst_number = 3
+metadata/_custom_type_script = "uid://87urgrldu7fp"
+
+[sub_resource type="Resource" id="Resource_bc3rc"]
+script = ExtResource("2_7x7kn")
+skill_name = "Ultimate"
+damage = 75.0
+mana_cost = 90.0
+animation_name = "ultimate"
+burst_number = 3
+metadata/_custom_type_script = "uid://87urgrldu7fp"
+
+[resource]
+script = ExtResource("1_fptma")
+name = "Swordsman"
+default_hp = 100.0
+default_mana = 100.0
+default_heal = 50.0
+default_mana_restore = 30.0
+skill1 = SubResource("Resource_bka2y")
+skill2 = SubResource("Resource_n073b")
+skill3 = SubResource("Resource_bc3rc")
+class_scene = ExtResource("1_bka2y")
+metadata/_custom_type_script = "uid://pxechihkx7g8"

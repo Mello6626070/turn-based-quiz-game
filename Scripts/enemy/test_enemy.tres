@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=3 format=3 uid="uid://dy3xxx0ooiay5"]
+
+[ext_resource type="PackedScene" uid="uid://b2e06u87mrwdq" path="res://Scenes/enemy/enemy.tscn" id="1_dwujf"]
+[ext_resource type="Script" uid="uid://doccsc5d22yyu" path="res://Scripts/enemy/enemy_type.gd" id="1_oxltd"]
+
+[resource]
+script = ExtResource("1_oxltd")
+name = "void"
+health = 200.0
+heal = 10.0
+heal_weight = 10
+light_attack_damage = 10.0
+light_attack_weight = 10
+heavy_attack_damage = 5.0
+heavy_attack_weight = 10
+skip_weight = 2
+scene = ExtResource("1_dwujf")
+metadata/_custom_type_script = "uid://doccsc5d22yyu"

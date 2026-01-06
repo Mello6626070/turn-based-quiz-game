@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cphkcwqnmiffo"]
+
+[ext_resource type="Script" uid="uid://bh6q51tv7g7y5" path="res://Scripts/player/player_class/Swordsman/swordsman.gd" id="1_hc68a"]
+[ext_resource type="SpriteFrames" uid="uid://cv0savs7v4c6l" path="res://Scenes/player/player_class/Swordsman/swordsman_animation.tres" id="2_w5ahg"]
+
+[node name="Swordsman" type="Node2D"]
+script = ExtResource("1_hc68a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -17)
+sprite_frames = ExtResource("2_w5ahg")
+animation = &"ultimate"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
