@@ -105,10 +105,12 @@ func _on_mouse_forrest_button_2_pressed() -> void:
 func _on_name_confirm_button_pressed() -> void:
 	buttonsfx.play()
 	var name: String = name_input.text
-	SavedData.player_name = name
-	player_name_label.text = name
-	SavedData.save()
-	name_input_screen.hide()
+	if name.length() > 0:
+		SavedData.player_name = name
+		player_name_label.text = name
+		SavedData.is_first_time = false
+		SavedData.save()
+		name_input_screen.hide()
 
 func _on_camera_cave_pressed() -> void:
 	buttonsfx.play()

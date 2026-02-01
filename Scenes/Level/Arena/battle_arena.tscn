@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=4 uid="uid://s37qap0fokdk"]
+[gd_scene load_steps=133 format=4 uid="uid://s37qap0fokdk"]
 
 [ext_resource type="Script" uid="uid://bshdmqwknblmq" path="res://Scenes/Level/Arena/battle_arena_controller.gd" id="1_0qn3q"]
 [ext_resource type="Texture2D" uid="uid://djiv1nlv71ghe" path="res://Assets/Tiles.png" id="1_b5rh7"]
@@ -1679,28 +1679,6 @@ sources/3 = SubResource("TileSetAtlasSource_padob")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0bn4"]
 bg_color = Color(0.49664593, 0.7775779, 1, 1)
 
-[sub_resource type="Resource" id="Resource_p0bn4"]
-script = ExtResource("18_padob")
-text = "Nagpapakita ng larawan"
-metadata/_custom_type_script = "uid://di4x8wm82w235"
-
-[sub_resource type="Resource" id="Resource_padob"]
-script = ExtResource("18_padob")
-text = "Nagtatanggap ng letra at numero"
-is_correct = true
-metadata/_custom_type_script = "uid://di4x8wm82w235"
-
-[sub_resource type="Resource" id="Resource_gr7k4"]
-script = ExtResource("18_padob")
-text = "Nagpapalabas ng tunog"
-metadata/_custom_type_script = "uid://di4x8wm82w235"
-
-[sub_resource type="Resource" id="Resource_8vhnq"]
-script = ExtResource("17_p0bn4")
-text = "Ano ang pangunahing trabaho ng keyboard?"
-answers = Array[ExtResource("18_padob")]([SubResource("Resource_p0bn4"), SubResource("Resource_padob"), SubResource("Resource_gr7k4")])
-metadata/_custom_type_script = "uid://bgf0lyvq07naj"
-
 [sub_resource type="Resource" id="Resource_fpr80"]
 script = ExtResource("18_padob")
 text = "Nagpapakita ng larawan"
@@ -1880,7 +1858,7 @@ metadata/_custom_type_script = "uid://di4x8wm82w235"
 
 [sub_resource type="Resource" id="Resource_x3xkk"]
 script = ExtResource("17_p0bn4")
-text = "akit ginagamit ang camera sa video call sa klase?"
+text = "bakit ginagamit ang camera sa video call sa klase?"
 answers = Array[ExtResource("18_padob")]([SubResource("Resource_gj26u"), SubResource("Resource_h6p2q"), SubResource("Resource_5qwsp")])
 audio = ExtResource("21_20vj6")
 metadata/_custom_type_script = "uid://bgf0lyvq07naj"
@@ -2468,7 +2446,6 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 script = ExtResource("16_waya5")
-questions = Array[ExtResource("17_p0bn4")]([SubResource("Resource_8vhnq")])
 keyboard_questions = Array[ExtResource("17_p0bn4")]([SubResource("Resource_lah18"), SubResource("Resource_2muxt"), SubResource("Resource_ns1ry")])
 mouse_questions = Array[ExtResource("17_p0bn4")]([SubResource("Resource_dhtgh"), SubResource("Resource_njlhq"), SubResource("Resource_68wd7")])
 camera_questions = Array[ExtResource("17_p0bn4")]([SubResource("Resource_r7sal"), SubResource("Resource_x3xkk"), SubResource("Resource_bjhr3")])

@@ -45,6 +45,9 @@ var facing_direction: float
 var saved_position: Vector2 = Vector2.ZERO
 var can_dash: bool = false
 var dash_jump_buffer: bool = false
+var button_direction: float
+var jump_button: bool = false
+var dash_button: bool = false
 
 func _ready() -> void:
 	set_state(current_state)
@@ -81,7 +84,7 @@ func fall(delta: float) -> void:
 	handle_movement()
 	if is_on_floor():
 		set_state(STATE.GROUND)
-	elif Input.is_action_just_pressed("jump"):
+	elif Input.is_action_just_pressed("jump") or jump_button:
 		if coyote_timer.time_left > 0:
 			set_state(STATE.JUMP)
 		elif can_double_jump:
@@ -103,7 +106,10 @@ func init_fall() -> void:
 
 func handle_movement(input_direction: float = 0) -> void:
 	if input_direction == 0:
-		input_direction = signf(Input.get_axis("left", "right"))
+		if button_direction != 0:
+			input_direction = button_direction
+		else:
+			input_direction = signf(Input.get_axis("left", "right"))
 	set_facing_direction(input_direction)
 	velocity.x = input_direction * WALK_VELOCITY
 
@@ -116,13 +122,14 @@ func set_facing_direction(direction: float) -> void:
 		wall_ray_cast.force_raycast_update()
 
 func init_ground() -> void:
+	jump_button = false
 	print("GROUND")
 	sfx_player.stop()
 	can_double_jump = true
 	can_dash = true
 
 func ground() -> void:
-	if Input.get_axis("left", "right") and velocity.x != 0:
+	if (Input.get_axis("left", "right") or button_direction != 0) and velocity.x != 0:
 		animated_sprite_2d.play("run")
 		if !sfx_player.playing:
 			sfx_player.stream = walking_sfx
@@ -134,7 +141,7 @@ func ground() -> void:
 	
 	if not is_on_floor():
 		set_state(STATE.FALL)
-	elif Input.is_action_just_pressed("jump"):
+	elif Input.is_action_just_pressed("jump") or jump_button:
 		set_state(STATE.JUMP)
 	elif Input.is_action_just_pressed("dash"):
 		set_state(STATE.DASH)
@@ -151,15 +158,16 @@ func jump(delta: float) -> void:
 	if current_state != STATE.WALL_JUMP:
 		handle_movement()
 	
-	if Input.is_action_just_released("jump") or velocity.y >= 0:
+	if (Input.is_action_just_released("jump") or velocity.y >= 0):
 		velocity.y = 0
 		set_state(STATE.FALL)
-	elif Input.is_action_just_pressed("jump"):
+	elif Input.is_action_just_pressed("jump") or jump_button:
 		set_state(STATE.DOUBLE_JUMP)
 	elif Input.is_action_just_pressed("dash") and can_dash:
 		set_state(STATE.DASH)
 
 func init_jump() -> void:
+	jump_button = false
 	animated_sprite_2d.play("jump")
 	sfx_player.stop()
 	sfx_player.stream = jumping_sfx
@@ -204,8 +212,15 @@ func init_dash() -> void:
 	sfx_player.stream = dash_sfx
 	sfx_player.play(0.38)
 	velocity.y = 0
+	var input: float
+	
+	if button_direction != 0:
+		input = signf(button_direction)
+	else:
+		input = signf(Input.get_axis("left", "right"))
+	
 	if previous_state != STATE.WALL_SLIDE:
-		set_facing_direction(signf(Input.get_axis("left", "right")))
+		set_facing_direction(input)
 	velocity.x = facing_direction * DASH_VELOCITY
 	saved_position = position
 	can_dash = previous_state == STATE.GROUND or previous_state == STATE.WALL_SLIDE
@@ -248,3 +263,29 @@ func _on_sfx_player_finished() -> void:
 	elif current_state == STATE.FALL:
 		sfx_player.stream = falling_sfx
 		sfx_player.play()
+
+func _on_right_button_button_down() -> void:
+	button_direction = 1.0
+
+
+func _on_left_button_button_down() -> void:
+	button_direction = -1.0
+
+
+func _on_left_button_button_up() -> void:
+	button_direction = 0
+
+
+func _on_right_button_button_up() -> void:
+	button_direction = 0
+
+
+func _on_jump_button_button_down() -> void:
+	jump_button = true
+
+func _on_jump_button_button_up() -> void:
+	jump_button = false
+
+func _on_dash_button_pressed() -> void:
+	if can_dash:
+		set_state(STATE.DASH)
