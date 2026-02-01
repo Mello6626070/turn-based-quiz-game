@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://sjon4r6s0gjr"]
+
+[ext_resource type="Script" uid="uid://d3b30xk2gjacu" path="res://Scripts/battle_encounter/player_enemy_encounter_detector.gd" id="1_y3bmj"]
+[ext_resource type="Resource" uid="uid://dy3xxx0ooiay5" path="res://Scripts/enemy/test_enemy.tres" id="2_64c5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3bmj"]
+size = Vector2(20, 510)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64c5e"]
+
+[node name="PlayerEnemyEncounterDetector" type="Node2D"]
+script = ExtResource("1_y3bmj")
+enemy_data = ExtResource("2_64c5e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -245)
+shape = SubResource("RectangleShape2D_y3bmj")
+
+[node name="SpriteContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_64c5e")
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

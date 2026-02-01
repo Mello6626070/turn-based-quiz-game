@@ -7,15 +7,15 @@
 [sub_resource type="Resource" id="Resource_bka2y"]
 script = ExtResource("2_7x7kn")
 skill_name = "Slash"
-damage = 20.0
-mana_cost = 10.0
+damage = 40.0
+mana_cost = 30.0
 animation_name = "slash"
 burst_number = 1
 metadata/_custom_type_script = "uid://87urgrldu7fp"
 
 [sub_resource type="Resource" id="Resource_n073b"]
 script = ExtResource("2_7x7kn")
-skill_name = "Three Fold Slash"
+skill_name = "Tempest"
 damage = 50.0
 mana_cost = 40.0
 animation_name = "three_fold_slash"
@@ -33,7 +33,7 @@ metadata/_custom_type_script = "uid://87urgrldu7fp"
 
 [resource]
 script = ExtResource("1_fptma")
-name = "Swordsman"
+name = "Sword"
 default_hp = 100.0
 default_mana = 100.0
 default_heal = 50.0

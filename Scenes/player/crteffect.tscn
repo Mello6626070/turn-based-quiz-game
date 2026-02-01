@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkn5mk23dyvvr"]
+
+[ext_resource type="Shader" uid="uid://5s50kml6ps71" path="res://Scripts/crt.gdshader" id="1_4qqf0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_627cv"]
+shader = ExtResource("1_4qqf0")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.2330000110675
+shader_parameter/scanlines_width = 0.482000022895
+shader_parameter/grille_opacity = 0.0030000001425
+shader_parameter/resolution = Vector2(576, 324)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.20000000298023
+shader_parameter/noise_opacity = 0.070000003325
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.042000001995
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.1
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.03200000152
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.165
+shader_parameter/vignette_opacity = 0.354000016815
+
+[sub_resource type="QuadMesh" id="QuadMesh_8ibks"]
+size = Vector2(1152, 648)
+center_offset = Vector3(576, 324, 0)
+
+[node name="crteffect" type="CanvasLayer"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_627cv")
+mesh = SubResource("QuadMesh_8ibks")

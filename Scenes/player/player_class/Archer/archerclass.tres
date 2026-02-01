@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="PlayerClass" load_steps=7 format=3 uid="uid://dt3o04wyexwix"]
+
+[ext_resource type="Script" uid="uid://pxechihkx7g8" path="res://Scripts/player/player_class/player_class.gd" id="1_fgl3s"]
+[ext_resource type="PackedScene" uid="uid://deqmebe1jekqq" path="res://Scenes/player/player_class/Archer/archer.tscn" id="1_yxg5k"]
+[ext_resource type="Script" uid="uid://87urgrldu7fp" path="res://Scripts/player/skill.gd" id="2_do17n"]
+
+[sub_resource type="Resource" id="Resource_yxg5k"]
+script = ExtResource("2_do17n")
+skill_name = "Shoot"
+damage = 20.0
+mana_cost = 30.0
+animation_name = "shoot"
+burst_number = 1
+metadata/_custom_type_script = "uid://87urgrldu7fp"
+
+[sub_resource type="Resource" id="Resource_f8mno"]
+script = ExtResource("2_do17n")
+skill_name = "Pierce"
+damage = 40.0
+mana_cost = 70.0
+animation_name = "pierce"
+burst_number = 2
+metadata/_custom_type_script = "uid://87urgrldu7fp"
+
+[sub_resource type="Resource" id="Resource_m4esy"]
+script = ExtResource("2_do17n")
+skill_name = "Snipe"
+damage = 90.0
+mana_cost = 100.0
+animation_name = "snipe"
+burst_number = 1
+metadata/_custom_type_script = "uid://87urgrldu7fp"
+
+[resource]
+script = ExtResource("1_fgl3s")
+name = "Bow"
+default_hp = 100.0
+default_mana = 200.0
+default_heal = 50.0
+default_mana_restore = 80.0
+skill1 = SubResource("Resource_yxg5k")
+skill2 = SubResource("Resource_f8mno")
+skill3 = SubResource("Resource_m4esy")
+class_scene = ExtResource("1_yxg5k")
+metadata/_custom_type_script = "uid://pxechihkx7g8"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=3 format=3 uid="uid://c68sa27p4nwks"]
+
+[ext_resource type="Script" uid="uid://doccsc5d22yyu" path="res://Scripts/enemy/enemy_type.gd" id="1_efh6a"]
+[ext_resource type="PackedScene" uid="uid://dog5daa1s1dfp" path="res://Scenes/enemy/keyboard_forest_boss.tscn" id="1_fhood"]
+
+[resource]
+script = ExtResource("1_efh6a")
+name = "Boss"
+health = 50.0
+heal = 30.0
+heal_weight = 2
+light_attack_damage = 10.0
+light_attack_weight = 20
+heavy_attack_damage = 25.0
+heavy_attack_weight = 5
+skip_weight = 2
+scene = ExtResource("1_fhood")
+metadata/_custom_type_script = "uid://doccsc5d22yyu"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cokvj80l62xef"
+path="res://.godot/imported/Assets_Mito Music and Sfx (Holgado)_SFX_DeathSFX Sample 4 8-16Bit Style (3) HERO-MONSTER.ogg-8fced02cfda3e8842ec33ac4d14a46fa.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Assets_Mito Music and Sfx (Holgado)_SFX_DeathSFX Sample 4 8-16Bit Style (3) HERO-MONSTER.ogg"
+dest_files=["res://.godot/imported/Assets_Mito Music and Sfx (Holgado)_SFX_DeathSFX Sample 4 8-16Bit Style (3) HERO-MONSTER.ogg-8fced02cfda3e8842ec33ac4d14a46fa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

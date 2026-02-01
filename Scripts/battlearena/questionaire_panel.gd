@@ -7,8 +7,16 @@ signal question_time_out()
 @onready var answer_a_button: Button = %AnswerAButton
 @onready var answer_b_button: Button = %AnswerBButton
 @onready var answer_c_button: Button = %AnswerCButton
+@onready var question_audio_player: AudioStreamPlayer = %QuestionAudioPlayer
 
 @export var questions: Array[Question]
+@export var keyboard_questions: Array[Question]
+@export var mouse_questions: Array[Question]
+@export var camera_questions: Array[Question]
+@export var speaker_questions: Array[Question]
+@export var monitor_questions: Array[Question]
+@export var printer_questions: Array[Question]
+@export var cpu_questions: Array[Question]
 @export var divisor: float = 2
 @export var converter: float = 1000
 
@@ -17,14 +25,22 @@ var start_time: float
 var end_time: float
 
 func _ready() -> void:
-	pass # Replace with function body.
+	match Global.current_world:
+		Global.WORLD.KEYBOARD: questions = keyboard_questions
+		Global.WORLD.MOUSE: questions = mouse_questions
+		Global.WORLD.CAMERA: questions = camera_questions
+		Global.WORLD.SPEAKER: questions = speaker_questions
+		Global.WORLD.MONITOR: questions = monitor_questions
+		Global.WORLD.PRINTER: questions = printer_questions
+		Global.WORLD.CPU: questions = cpu_questions
 
 func _process(delta: float) -> void:
 	pass
 
 func select_question() -> void:
 	start_time = Time.get_ticks_msec()
-	current_question = questions[0]
+	var rng: int = randi_range(0, questions.size() - 1)
+	current_question = questions[rng]
 	display_question()
 
 func display_question() -> void:
@@ -54,6 +70,8 @@ func _on_answer_c_button_pressed() -> void:
 func _on_visibility_changed() -> void:
 	if visible:
 		select_question()
+		question_audio_player.stream = current_question.audio
+		question_audio_player.play()
 	else:
 		return
 

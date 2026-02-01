@@ -1,5 +1,8 @@
 extends EnemyVisual
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var attack: AudioStreamPlayer = $Attack
+@onready var hurt: AudioStreamPlayer = $Hurt
+@onready var death: AudioStreamPlayer = $Death
 
 
 func start_animation(animation_name: String) -> void:
@@ -10,14 +13,20 @@ func start_animation(animation_name: String) -> void:
 				animated_sprite_2d.play("slash1")
 			else :
 				animated_sprite_2d.play("slash2")
+			attack.play()
 		"heavy_attack":
 			animated_sprite_2d.play("three_fold_slash")
+			attack.play()
 		"ultimate":
 			animated_sprite_2d.play("ultimate")
 		"idle":
 			animated_sprite_2d.play("idle")
 		"hurt":
 			animated_sprite_2d.play("hurt")
+			hurt.play()
+		"death":
+			animated_sprite_2d.play("death")
+			death.play()
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	enemy_animation_finished.emit(animated_sprite_2d.animation)

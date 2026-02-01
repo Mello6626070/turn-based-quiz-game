@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8l75dnfq1enm"]
+
+[ext_resource type="PackedScene" uid="uid://dkn5mk23dyvvr" path="res://Scenes/player/crteffect.tscn" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://cksksilokgg37" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="1_48xlc"]
+[ext_resource type="Script" uid="uid://kxsur2f58a1v" path="res://Scenes/main_menu.gd" id="1_opfnp"]
+[ext_resource type="Texture2D" uid="uid://l12gjhhqtigx" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="2_n45e2"]
+[ext_resource type="Texture2D" uid="uid://oj41vi78m3qn" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="3_opfnp"]
+[ext_resource type="Texture2D" uid="uid://cbihupad6ucm7" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="4_cp0ys"]
+[ext_resource type="AudioStream" uid="uid://d4fajybsnixgf" path="res://Assets/keyboard-click-327728.mp3" id="7_cp0ys"]
+[ext_resource type="AudioStream" uid="uid://dcibn3xj5b4b5" path="res://Assets/gamer-menu-431351.mp3" id="8_yhxw7"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_opfnp")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(563, 482.945)
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D"]
+scroll_offset = Vector2(0, -285.295)
+repeat_size = Vector2(1024, 0)
+autoscroll = Vector2(10, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D"]
+texture = ExtResource("1_48xlc")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Node2D"]
+scroll_offset = Vector2(0, -173)
+repeat_size = Vector2(1024, 0)
+autoscroll = Vector2(20, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D2"]
+texture = ExtResource("2_n45e2")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Node2D"]
+scroll_offset = Vector2(0, -113)
+repeat_size = Vector2(1024, 0)
+autoscroll = Vector2(30, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D3"]
+texture = ExtResource("3_opfnp")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Node2D"]
+repeat_size = Vector2(1024, 0)
+autoscroll = Vector2(40, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D4"]
+texture = ExtResource("4_cp0ys")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 200
+text = "PROTOTYPE"
+
+[node name="NewGame" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "BAGONG LARO"
+
+[node name="Continue" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "MAGPATULOY"
+
+[node name="Exit" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "UMALIS
+"
+
+[node name="crteffect" parent="." instance=ExtResource("1_28flt")]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cp0ys")
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_yhxw7")
+volume_db = -5.0
+autoplay = true
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

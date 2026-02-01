@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=3 format=3 uid="uid://dx7v02bmvn1j7"]
+
+[ext_resource type="PackedScene" uid="uid://chy68f6w8ld5l" path="res://Scenes/enemy/skeleton.tscn" id="1_16eyr"]
+[ext_resource type="Script" uid="uid://doccsc5d22yyu" path="res://Scripts/enemy/enemy_type.gd" id="1_bu5ok"]
+
+[resource]
+script = ExtResource("1_bu5ok")
+name = "Infected Skeleton"
+health = 50.0
+heal = 20.0
+heal_weight = 1
+light_attack_damage = 20.0
+light_attack_weight = 10
+heavy_attack_damage = 30.0
+heavy_attack_weight = 5
+skip_weight = 2
+scene = ExtResource("1_16eyr")
+metadata/_custom_type_script = "uid://doccsc5d22yyu"

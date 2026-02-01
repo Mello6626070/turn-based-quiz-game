@@ -1,6 +1,7 @@
 class_name Question extends Resource
 @export var text: String
 @export var answers: Array[Answer]
+@export var audio: AudioStream
 
 func get_answers() -> Array[Answer]:
 	answers.shuffle()

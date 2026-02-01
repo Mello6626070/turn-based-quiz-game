@@ -1,29 +1,45 @@
-class_name SavedData extends Node
+extends Node
 
 const SLOT1: String = "user://save1.json"
-const SLOT2: String = "user://save2.json"
-const SLOT3: String = "user://save3.json"
 const KEY: String = "3.14159265"
 
-enum SLOT{
-	SLOT1,
-	SLOT2,
-	SLOT3
-}
+var player_name: String = ""
+var unlocked_level: int = 1
+var is_first_time: bool = true
 
-
-
-var selected_slot: SLOT
-
-func save(slot: SLOT) -> void:
-	var selected_slot: String
-	match slot:
-		SLOT.SLOT1:
-			selected_slot = SLOT1
-		SLOT.SLOT2:
-			selected_slot = SLOT2
-		SLOT.SLOT3:
-			selected_slot = SLOT3
-	var file: FileAccess = FileAccess.open_encrypted_with_pass(selected_slot, FileAccess.WRITE, KEY)
+func save() -> void:
+	var file: FileAccess = FileAccess.open_encrypted_with_pass(SLOT1, FileAccess.WRITE, KEY)
 	
+	var data: Dictionary = {
+		"player_name": player_name,
+		"unlocked_level": unlocked_level,
+		"is_first_time": is_first_time
+	}
 	
+	var json: String = JSON.stringify(data, "\t")
+	file.store_string(json)
+	file.close()
+
+func load_data() -> void: 
+	if FileAccess.file_exists(SLOT1):
+		var file: FileAccess = FileAccess.open_encrypted_with_pass(SLOT1, FileAccess.READ, KEY)
+		var json: String = file.get_as_text()
+		var data: Dictionary = JSON.parse_string(json)
+		
+		player_name = data["player_name"]
+		unlocked_level = data["unlocked_level"]
+		is_first_time = data["is_first_time"]
+		file.close()
+
+func reset_data() -> void:
+	var file: FileAccess = FileAccess.open_encrypted_with_pass(SLOT1, FileAccess.WRITE, KEY)
+	
+	var data: Dictionary = {
+		"player_name": "",
+		"unlocked_level": 1,
+		"is_first_time": true
+	}
+	
+	var json: String = JSON.stringify(data, "\t")
+	file.store_string(json)
+	file.close()

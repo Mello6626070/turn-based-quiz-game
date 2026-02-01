@@ -8,6 +8,7 @@ signal skill_selected(skill: Skill)
 @onready var player_name_label: Label = %PlayerNameLabel
 @onready var player_health_bar: ProgressBar = %PlayerHealthBar
 @onready var player_mana_bar: ProgressBar = %PlayerManaBar
+@onready var button_sfx: AudioStreamPlayer = %ButtonSFX
 
 @onready var enemy_name_label: Label = %EnemyNameLabel
 @onready var enemy_health_bar: ProgressBar = %EnemyHealthBar
@@ -20,6 +21,10 @@ signal skill_selected(skill: Skill)
 
 @onready var context_panel: VBoxContainer = %ContextPanel
 @onready var context_label: Label = %ContextLabel
+@onready var win_panel: Control = %WinPanel
+@onready var win_loss_label: Label = %WinLossLabel
+@onready var back_to_world_button: Button = $Screen/WinPanel/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BackToWorldButton
+
 
 var skill_panel_scene: PackedScene = preload("res://Scenes/Level/Arena/skill_panel.tscn")
 
@@ -31,6 +36,10 @@ var previous_mana: float
 
 var current_enemy_health: float
 var previous_enemy_health: float
+
+func _ready() -> void:
+	SavedData.load_data()
+	player_name_label.text = SavedData.player_name
 
 func _process(delta: float) -> void:
 	
@@ -51,8 +60,7 @@ func _process(delta: float) -> void:
 		if ratio >= 0.9:
 			ratio = 1
 		context_label.visible_ratio = ratio
-		print(context_label.visible_ratio)
-	
+		
 	if questionaire_panel.visible:
 		timer_progress_bar.max_value = question_timer.wait_time
 		timer_progress_bar.value = question_timer.time_left
@@ -113,12 +121,15 @@ func show_context_panel(text: String) -> void:
 	context_label.visible_ratio = 0
 
 func _on_attack_button_pressed() -> void:
+	button_sfx.play()
 	attack_button_pressed.emit()
 
 func _on_restore_health_button_pressed() -> void:
+	button_sfx.play()
 	restore_health_button_pressed.emit()
 
 func _on_restore_mana_button_pressed() -> void:
+	button_sfx.play()
 	restore_mana_button_pressed.emit()
 
 func populate_skill_panel(list: Array[Skill]) -> void:
@@ -131,3 +142,31 @@ func populate_skill_panel(list: Array[Skill]) -> void:
 
 func skill_selected_recieved(skill: Skill) -> void:
 	skill_selected.emit(skill)
+
+func show_player_lost() -> void:
+	win_panel.show()
+	win_loss_label.text = "YOU LOST"
+	Global.current_enemy_is_defeated = false
+
+func show_player_win() -> void:
+	win_panel.show()
+	win_loss_label.text = "YOU WIN"
+	Global.current_enemy_is_defeated = true
+
+func _on_back_to_world_button_pressed() -> void:
+	button_sfx.play()
+	match Global.current_world:
+		Global.WORLD.KEYBOARD:
+			get_tree().change_scene_to_file("res://Scenes/Level/KeyboardWorld/keyboard_world.tscn")
+		Global.WORLD.MOUSE:
+			get_tree().change_scene_to_file("res://Scenes/Level/MouseWorld/mouse_world.tscn")
+		Global.WORLD.CAMERA:
+			get_tree().change_scene_to_file("res://Scenes/Level/CameraWorld/camera_world.tscn")
+		Global.WORLD.SPEAKER:
+			get_tree().change_scene_to_file("res://Scenes/Level/SpeakerWorld/speaker_world.tscn")
+		Global.WORLD.MONITOR:
+			get_tree().change_scene_to_file("res://Scenes/Level/MonitorWorld/monitor_world.tscn")
+		Global.WORLD.PRINTER:
+			get_tree().change_scene_to_file("res://Scenes/Level/PrinterWorld/printer_world.tscn")
+		Global.WORLD.CPU:
+			get_tree().change_scene_to_file("res://Scenes/Level/CPUWorld/cpu_world.tscn")

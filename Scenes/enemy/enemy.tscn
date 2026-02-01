@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2e06u87mrwdq"]
+[gd_scene load_steps=6 format=3 uid="uid://b2e06u87mrwdq"]
 
 [ext_resource type="Script" uid="uid://dgnuwlck1k0cd" path="res://Scripts/enemy/enemy.gd" id="1_7xxa4"]
 [ext_resource type="SpriteFrames" uid="uid://cv0savs7v4c6l" path="res://Scenes/player/player_class/Swordsman/swordsman_animation.tres" id="1_swltt"]
+[ext_resource type="AudioStream" uid="uid://r0vr3ert7jjo" path="res://Assets/SwordSlashSFX.wav" id="3_is6lh"]
+[ext_resource type="AudioStream" uid="uid://vknaf30nmkas" path="res://Assets/Assets_Mito Music and Sfx (Holgado)_SFX_GruntSFX  (1).wav" id="4_y8yvo"]
+[ext_resource type="AudioStream" uid="uid://d02jvwq6158xf" path="res://Assets/Assets_Mito Music and Sfx (Holgado)_SFX_DeathSFX_Monster (4) (1).wav" id="5_y8yvo"]
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_7xxa4")
@@ -13,6 +16,15 @@ sprite_frames = ExtResource("1_swltt")
 animation = &"idle"
 autoplay = "idle"
 flip_h = true
+
+[node name="Attack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_is6lh")
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_y8yvo")
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_y8yvo")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

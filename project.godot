@@ -10,15 +10,22 @@ config_version=5
 
 [application]
 
-config/name="TurnBasedQuizGame"
+config/name="TurnBasedQuizGamePrototype"
+run/main_scene="uid://c8l75dnfq1enm"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SavedData="*res://Scripts/saved_data.gd"
+Global="*res://Scripts/global.gd"
 
 [display]
 
 window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep_height"
 
 [gui]
 
@@ -81,8 +88,10 @@ dash={
 2d_physics/layer_3="Entities"
 2d_physics/layer_4="Detectors"
 2d_physics/layer_5="Enemies"
+2d_physics/layer_6="Exit"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.8123068, 0.89192575, 0.9841837, 1)

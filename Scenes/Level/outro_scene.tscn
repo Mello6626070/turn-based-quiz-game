@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://btntdmwve3pv4"]
+
+[ext_resource type="Script" uid="uid://bbssq4mr44vp3" path="res://Scenes/Level/outro_scene.gd" id="1_d4rno"]
+[ext_resource type="Shader" uid="uid://b6ia5jaxf38d6" path="res://Scripts/bg.gdshader" id="2_cnlhk"]
+[ext_resource type="PackedScene" uid="uid://dkn5mk23dyvvr" path="res://Scenes/player/crteffect.tscn" id="3_u7oo0"]
+[ext_resource type="AudioStream" uid="uid://c3jxqxiolobgd" path="res://Assets/Audio/outroline.mp3" id="4_d4rno"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14uik"]
+shader = ExtResource("2_cnlhk")
+shader_parameter/spin_rotation_speed = 0.5
+shader_parameter/move_speed = 7.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0, 0.30785805, 0.65949094, 1)
+shader_parameter/colour_2 = Color(0, 0.2791741, 0.4807415, 1)
+shader_parameter/colour_3 = Color(0.086, 0.137, 0.145, 1)
+shader_parameter/contrast = 3.5
+shader_parameter/lighting = 0.4
+shader_parameter/spin_amount = 0.4
+shader_parameter/pixel_filter = 1152.0
+shader_parameter/is_rotating = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_a0grg"]
+size = Vector2(1152, 648)
+center_offset = Vector3(576, 324, 0)
+
+[node name="OutroScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d4rno")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_14uik")
+mesh = SubResource("QuadMesh_a0grg")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -1133.5
+offset_right = 576.0
+offset_bottom = 1133.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1152, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Pagkatapos mong iligtas lahat, magiging maayos ang Computer World!” \"Salamat, (name ng player) Ngayon, handa ka nang gumamit ng kompyuter nang tama."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "BUMALIK SA MAIN MENU"
+flat = true
+
+[node name="crteffect" parent="." instance=ExtResource("3_u7oo0")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_d4rno")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

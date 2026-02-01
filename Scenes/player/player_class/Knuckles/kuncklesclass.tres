@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="PlayerClass" load_steps=7 format=3 uid="uid://be4t4merrsvn6"]
+
+[ext_resource type="PackedScene" uid="uid://by04kx0d6j5ds" path="res://Scenes/player/player_class/Knuckles/martial_artist.tscn" id="1_vyl7q"]
+[ext_resource type="Script" uid="uid://pxechihkx7g8" path="res://Scripts/player/player_class/player_class.gd" id="1_w7804"]
+[ext_resource type="Script" uid="uid://87urgrldu7fp" path="res://Scripts/player/skill.gd" id="2_m8ope"]
+
+[sub_resource type="Resource" id="Resource_vyl7q"]
+script = ExtResource("2_m8ope")
+skill_name = "Combo"
+damage = 15.0
+mana_cost = 20.0
+animation_name = "combo"
+burst_number = 3
+metadata/_custom_type_script = "uid://87urgrldu7fp"
+
+[sub_resource type="Resource" id="Resource_mlcv2"]
+script = ExtResource("2_m8ope")
+skill_name = "Kick"
+damage = 30.0
+mana_cost = 40.0
+animation_name = "kick"
+burst_number = 2
+metadata/_custom_type_script = "uid://87urgrldu7fp"
+
+[sub_resource type="Resource" id="Resource_0f2tx"]
+script = ExtResource("2_m8ope")
+skill_name = "Barrage"
+damage = 60.0
+mana_cost = 50.0
+animation_name = "barrage"
+burst_number = 5
+metadata/_custom_type_script = "uid://87urgrldu7fp"
+
+[resource]
+script = ExtResource("1_w7804")
+name = "Martial Combat"
+default_hp = 200.0
+default_mana = 100.0
+default_heal = 80.0
+default_mana_restore = 40.0
+skill1 = SubResource("Resource_vyl7q")
+skill2 = SubResource("Resource_mlcv2")
+skill3 = SubResource("Resource_0f2tx")
+class_scene = ExtResource("1_vyl7q")
+metadata/_custom_type_script = "uid://pxechihkx7g8"

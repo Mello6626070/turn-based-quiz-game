@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cphkcwqnmiffo"]
+[gd_scene load_steps=5 format=3 uid="uid://cphkcwqnmiffo"]
 
 [ext_resource type="Script" uid="uid://bh6q51tv7g7y5" path="res://Scripts/player/player_class/Swordsman/swordsman.gd" id="1_hc68a"]
 [ext_resource type="SpriteFrames" uid="uid://cv0savs7v4c6l" path="res://Scenes/player/player_class/Swordsman/swordsman_animation.tres" id="2_w5ahg"]
+[ext_resource type="AudioStream" uid="uid://d4ma5p60u1k8h" path="res://Assets/Assets_Mito Music and Sfx (Holgado)_SFX_HitSFX (1).wav" id="3_q8xb4"]
+[ext_resource type="AudioStream" uid="uid://r0vr3ert7jjo" path="res://Assets/SwordSlashSFX.wav" id="4_pacry"]
 
 [node name="Swordsman" type="Node2D"]
 script = ExtResource("1_hc68a")
@@ -10,6 +12,15 @@ script = ExtResource("1_hc68a")
 position = Vector2(0, -17)
 sprite_frames = ExtResource("2_w5ahg")
 animation = &"ultimate"
+
+[node name="hurt" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_q8xb4")
+pitch_scale = 1.5
+
+[node name="attack" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_pacry")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

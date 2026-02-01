@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=3 format=3 uid="uid://r0lfu6gslca2"]
+
+[ext_resource type="PackedScene" uid="uid://caadluigq5ulc" path="res://Scenes/enemy/mouse_boss.tscn" id="1_jy4l2"]
+[ext_resource type="Script" uid="uid://doccsc5d22yyu" path="res://Scripts/enemy/enemy_type.gd" id="1_mohni"]
+
+[resource]
+script = ExtResource("1_mohni")
+name = "Boss"
+health = 50.0
+heal = 30.0
+heal_weight = 5
+light_attack_damage = 10.0
+light_attack_weight = 20
+heavy_attack_damage = 20.0
+heavy_attack_weight = 2
+skip_weight = 5
+scene = ExtResource("1_jy4l2")
+metadata/_custom_type_script = "uid://doccsc5d22yyu"

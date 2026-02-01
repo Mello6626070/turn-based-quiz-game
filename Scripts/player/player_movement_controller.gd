@@ -6,6 +6,13 @@ class_name PlayerMovementController extends CharacterBody2D
 @onready var dash_timer: Timer = $DashTimer
 @onready var camera_container: Node2D = $CameraContainer
 @onready var camera_2d: Camera2D = $CameraContainer/Camera2D
+@onready var sfx_player: AudioStreamPlayer = $SfxPlayer
+
+@export var player_class_data: PlayerClass
+@export var walking_sfx: AudioStream
+@export var jumping_sfx: AudioStream
+@export var dash_sfx: AudioStream
+@export var falling_sfx: AudioStream
 
 enum STATE {
 	FALL,
@@ -49,6 +56,7 @@ func _physics_process(delta: float) -> void:
 func set_state(to_state: STATE) -> void:
 	previous_state = current_state
 	current_state = to_state
+	sfx_player.stop()
 	match current_state:
 		STATE.FALL: init_fall()
 		STATE.GROUND: init_ground()
@@ -84,6 +92,9 @@ func fall(delta: float) -> void:
 		set_state(STATE.DASH)
 
 func init_fall() -> void:
+	sfx_player.stop()
+	sfx_player.stream = falling_sfx
+	sfx_player.play()
 	if previous_state != STATE.DOUBLE_JUMP:
 		animated_sprite_2d.play("fall")
 	if previous_state == STATE.GROUND:
@@ -106,13 +117,18 @@ func set_facing_direction(direction: float) -> void:
 
 func init_ground() -> void:
 	print("GROUND")
+	sfx_player.stop()
 	can_double_jump = true
 	can_dash = true
 
 func ground() -> void:
 	if Input.get_axis("left", "right") and velocity.x != 0:
 		animated_sprite_2d.play("run")
+		if !sfx_player.playing:
+			sfx_player.stream = walking_sfx
+			sfx_player.play()
 	else:
+		sfx_player.stop()
 		animated_sprite_2d.play("idle")
 	handle_movement()
 	
@@ -145,11 +161,17 @@ func jump(delta: float) -> void:
 
 func init_jump() -> void:
 	animated_sprite_2d.play("jump")
+	sfx_player.stop()
+	sfx_player.stream = jumping_sfx
+	sfx_player.play(0.38)
 	velocity.y = JUMP_VELOCITY
 	coyote_timer.stop()
 
 func init_double_jump() -> void:
 	animated_sprite_2d.play("flip")
+	sfx_player.stop()
+	sfx_player.stream = jumping_sfx
+	sfx_player.play(0.38)
 	velocity.y = DOUBLE_JUMP_VELOCITY
 	can_double_jump = false
 
@@ -178,6 +200,9 @@ func init_dash() -> void:
 		current_state = previous_state
 		return
 	animated_sprite_2d.play("dash")
+	sfx_player.stop()
+	sfx_player.stream = dash_sfx
+	sfx_player.play(0.38)
 	velocity.y = 0
 	if previous_state != STATE.WALL_SLIDE:
 		set_facing_direction(signf(Input.get_axis("left", "right")))
@@ -214,3 +239,12 @@ func init_wall_jump() -> void:
 
 func is_input_toward_facing() -> bool:
 	return sign(Input.get_axis("left", "right")) == facing_direction
+
+func _on_sfx_player_finished() -> void:
+	if current_state == STATE.GROUND:
+		if velocity.x != 0:
+			sfx_player.stream = walking_sfx
+			sfx_player.play()
+	elif current_state == STATE.FALL:
+		sfx_player.stream = falling_sfx
+		sfx_player.play()

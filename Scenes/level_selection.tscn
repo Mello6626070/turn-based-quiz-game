@@ -1,0 +1,715 @@
+[gd_scene load_steps=61 format=3 uid="uid://do8f0rbtu68fv"]
+
+[ext_resource type="Script" uid="uid://c35i5m4lm5fkx" path="res://Scripts/level_selection.gd" id="1_0dexr"]
+[ext_resource type="Texture2D" uid="uid://7hx5rlwx6bf3" path="res://Assets/UI Assets pack_v.1_st/UI.png" id="1_1m0xv"]
+[ext_resource type="Texture2D" uid="uid://bnr5q0fm4boem" path="res://Assets/UI Assets pack_v.1_st/Book.png" id="2_6dews"]
+[ext_resource type="Script" uid="uid://pxechihkx7g8" path="res://Scripts/player/player_class/player_class.gd" id="2_185p7"]
+[ext_resource type="Theme" uid="uid://dgm6kf3gj0axj" path="res://Assets/theme.tres" id="3_0ac8u"]
+[ext_resource type="Resource" uid="uid://ue1tb4aawkdc" path="res://Scripts/player/player_class/Swordsman/swordsmanclass.tres" id="3_ph5f3"]
+[ext_resource type="Resource" uid="uid://dt3o04wyexwix" path="res://Scenes/player/player_class/Archer/archerclass.tres" id="4_c0qe2"]
+[ext_resource type="Texture2D" uid="uid://dde1bhqe5xumt" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-00.png" id="5_6m7vg"]
+[ext_resource type="Resource" uid="uid://be4t4merrsvn6" path="res://Scenes/player/player_class/Knuckles/kuncklesclass.tres" id="5_g31uu"]
+[ext_resource type="Texture2D" uid="uid://cmadmyfc35ggy" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-01.png" id="6_3bx8t"]
+[ext_resource type="Texture2D" uid="uid://dc3jgsetprhmm" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-02.png" id="7_185p7"]
+[ext_resource type="Texture2D" uid="uid://cucgt8c12uni8" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-03.png" id="8_ph5f3"]
+[ext_resource type="Texture2D" uid="uid://bv5uq42u2mhdg" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-04.png" id="9_c0qe2"]
+[ext_resource type="Texture2D" uid="uid://dxmlsi7q8cm48" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-05.png" id="10_g31uu"]
+[ext_resource type="Texture2D" uid="uid://dd4blkje2rvuu" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-06.png" id="11_43bdf"]
+[ext_resource type="Texture2D" uid="uid://6qfdqhtcwcag" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-07.png" id="12_vumd7"]
+[ext_resource type="Texture2D" uid="uid://wd18hpxj1eak" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-08.png" id="13_vwsgn"]
+[ext_resource type="Texture2D" uid="uid://bgu7136wow8g" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-jump-00.png" id="14_n08ig"]
+[ext_resource type="Texture2D" uid="uid://bb6yb151wyi5v" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-jump-01.png" id="15_g7otn"]
+[ext_resource type="Texture2D" uid="uid://chgq7k6d2lxfp" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-jump-02.png" id="16_aluw7"]
+[ext_resource type="Texture2D" uid="uid://cpytytxuv46vc" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-jump-03.png" id="17_x7f6y"]
+[ext_resource type="Texture2D" uid="uid://xpm1we5qur3s" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-jump-04.png" id="18_obpqu"]
+[ext_resource type="Texture2D" uid="uid://cot67jytauklv" path="res://Assets/Player/Adventurer-Bow/Individual Sprites/adventurer-bow-jump-05.png" id="19_gpetb"]
+[ext_resource type="Texture2D" uid="uid://dpums4yymglqy" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-00.png" id="20_pyhay"]
+[ext_resource type="Texture2D" uid="uid://xh8p77pcs2dk" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-01.png" id="21_3ijcu"]
+[ext_resource type="Texture2D" uid="uid://52ciw71gimt" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-02.png" id="22_7swao"]
+[ext_resource type="Texture2D" uid="uid://bgwj03nnmv7sq" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-03.png" id="23_yrruy"]
+[ext_resource type="Texture2D" uid="uid://c8oj1kgap2q6v" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-04.png" id="24_4grwn"]
+[ext_resource type="Texture2D" uid="uid://c850iglmu6l02" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-05.png" id="25_mb38x"]
+[ext_resource type="Texture2D" uid="uid://kvo46i88shpm" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-06.png" id="26_g45mx"]
+[ext_resource type="Texture2D" uid="uid://uajr66w8ugc5" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-07.png" id="27_cr5lv"]
+[ext_resource type="Texture2D" uid="uid://bp551jituss0p" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-08.png" id="28_d4rbd"]
+[ext_resource type="Texture2D" uid="uid://bgbfyvauhxcae" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-09.png" id="29_1x4aw"]
+[ext_resource type="Texture2D" uid="uid://c87ogj55385pn" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-10.png" id="30_1yafn"]
+[ext_resource type="Texture2D" uid="uid://b5e65wn5vbk1b" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-attack1-00.png" id="31_w2e6n"]
+[ext_resource type="Texture2D" uid="uid://dfggb80dihfhk" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-attack1-01.png" id="32_d30ar"]
+[ext_resource type="Texture2D" uid="uid://beta7o2ggoj1w" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-attack1-02.png" id="33_bpdgp"]
+[ext_resource type="Texture2D" uid="uid://rhdgkdqm6d0g" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-attack1-03.png" id="34_lfjmu"]
+[ext_resource type="Texture2D" uid="uid://c55hhr1mnwvn8" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-attack1-04.png" id="35_q8iwu"]
+[ext_resource type="Texture2D" uid="uid://c2gr5b1xlabet" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-attack2-00.png" id="36_io7rf"]
+[ext_resource type="Texture2D" uid="uid://cc6tatnvfdk2s" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-attack2-01.png" id="37_is7xc"]
+[ext_resource type="Texture2D" uid="uid://doqm6krisxhr4" path="res://Assets/map.png" id="42_g31uu"]
+[ext_resource type="Texture2D" uid="uid://bn6xjgc1fg7sq" path="res://Assets/UI Assets pack_v.1_st/ribbon.png" id="43_43bdf"]
+[ext_resource type="Shader" uid="uid://c8eyp24puai4a" path="res://Scripts/glitchfx.gdshader" id="44_vumd7"]
+[ext_resource type="AudioStream" uid="uid://d4fajybsnixgf" path="res://Assets/keyboard-click-327728.mp3" id="45_vwsgn"]
+[ext_resource type="AudioStream" uid="uid://bqcmy6hfu604x" path="res://Assets/game-background-sound-342336.mp3" id="46_n08ig"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhq3g"]
+atlas = ExtResource("1_1m0xv")
+region = Rect2(421, 85, 39, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjbgg"]
+atlas = ExtResource("2_6dews")
+region = Rect2(15, 32, 161, 94)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0dexr"]
+texture = SubResource("AtlasTexture_kjbgg")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ac8u"]
+atlas = ExtResource("1_1m0xv")
+region = Rect2(978, 82, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dews"]
+atlas = ExtResource("1_1m0xv")
+region = Rect2(289, 81, 46, 46)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ac8u"]
+texture = SubResource("AtlasTexture_6dews")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aemaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6m7vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3bx8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_185p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ph5f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c0qe2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g31uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_43bdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vumd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vwsgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n08ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_g7otn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_aluw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_x7f6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_obpqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gpetb")
+}],
+"loop": true,
+"name": &"BowIdle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_pyhay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3ijcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7swao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_yrruy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_4grwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mb38x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_g45mx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cr5lv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_d4rbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1x4aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_1yafn")
+}],
+"loop": true,
+"name": &"KnucklesIdle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_w2e6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_d30ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_bpdgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_lfjmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_q8iwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_io7rf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_is7xc")
+}],
+"loop": true,
+"name": &"SwordIdle",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntl0a"]
+atlas = ExtResource("1_1m0xv")
+region = Rect2(962, 82, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dexr"]
+atlas = ExtResource("1_1m0xv")
+region = Rect2(417, 17, 46, 46)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fsxpa"]
+texture = SubResource("AtlasTexture_0dexr")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vumd7"]
+atlas = ExtResource("43_43bdf")
+region = Rect2(225, 144, 30, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwsgn"]
+texture = SubResource("AtlasTexture_vumd7")
+texture_margin_left = 8.0
+texture_margin_top = 4.0
+texture_margin_right = 8.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwsgn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vumd7"]
+shader = ExtResource("44_vumd7")
+shader_parameter/glitch_chance = 0.5690000270275
+shader_parameter/glitch_speed = 7.0
+shader_parameter/slice_density = 14.0
+shader_parameter/slice_strength = 0.38
+shader_parameter/shake_strength = 0.02
+shader_parameter/chroma_offset = 0.016
+shader_parameter/noise_strength = 0.05
+shader_parameter/color_flash_strength = 0.4
+shader_parameter/scanline_strength = 0.18
+shader_parameter/local_warp_strength = 0.14
+shader_parameter/flip_chance = 0.0
+
+[node name="LevelSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0dexr")
+player_weapon_list = Array[ExtResource("2_185p7")]([ExtResource("3_ph5f3"), ExtResource("4_c0qe2"), ExtResource("5_g31uu")])
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_bhq3g")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 72
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_right = 72
+theme_override_constants/margin_bottom = 72
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0dexr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="PlayerNameLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_0ac8u")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 58
+text = "PLAYER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="PreviousButton" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_0ac8u")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0ac8u")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="WeaponVisual" type="AnimatedSprite2D" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/PanelContainer/CenterContainer/Control"]
+unique_name_in_owner = true
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_aemaa")
+animation = &"KnucklesIdle"
+autoplay = "SwordIdle"
+frame_progress = 0.3808319
+
+[node name="NextButton" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_ntl0a")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="WeaponLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_0ac8u")
+theme_override_font_sizes/font_size = 52
+text = "WEAPON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="HPLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("3_0ac8u")
+theme_override_font_sizes/font_size = 32
+text = "HP: 150"
+
+[node name="HPRegenLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("3_0ac8u")
+theme_override_font_sizes/font_size = 32
+text = "HP Regen: 20"
+
+[node name="ManaLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("3_0ac8u")
+theme_override_font_sizes/font_size = 32
+text = "Mana: 100"
+
+[node name="ManaRegenLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = ExtResource("3_0ac8u")
+theme_override_font_sizes/font_size = 32
+text = "Mana Regen: 25"
+
+[node name="Label3" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_0ac8u")
+theme_override_font_sizes/font_size = 32
+text = "ATTACKS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0ac8u")
+theme_override_styles/panel = SubResource("StyleBoxTexture_fsxpa")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Skill1Name" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "ATTACK 1"
+
+[node name="Skill1DMG" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "DMG: 50"
+
+[node name="Skill1MANA" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "MANA: 20"
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0ac8u")
+theme_override_styles/panel = SubResource("StyleBoxTexture_fsxpa")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="Skill2Name" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "ATTACK 2"
+
+[node name="Skill2DMG" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "DMG: 50"
+
+[node name="Skill2MANA" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "MANA: 20"
+
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0ac8u")
+theme_override_styles/panel = SubResource("StyleBoxTexture_fsxpa")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer3"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer3/MarginContainer"]
+layout_mode = 2
+
+[node name="Skill3Name" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "ATTACK 3"
+
+[node name="Skill3DMG" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "DMG: 50"
+
+[node name="Skill3MANA" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/PanelContainer3/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "MANA: 20"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 62
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 62
+theme_override_constants/margin_bottom = 60
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("42_g31uu")
+
+[node name="Levels" type="Control" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="KeyboardForrestButton" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 56.0
+offset_right = 270.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0.34033987, 0.34033906, 0.34033927, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_vwsgn")
+text = "Keyboard Forrest
+"
+
+[node name="MouseForrestButton2" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 136.0
+offset_right = 200.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0.34033987, 0.34033906, 0.34033927, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_vwsgn")
+text = "Mouse Mountain
+"
+
+[node name="CameraCave" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels"]
+material = SubResource("ShaderMaterial_vwsgn")
+layout_mode = 0
+offset_left = 127.0
+offset_top = 209.0
+offset_right = 270.0
+offset_bottom = 236.0
+theme_override_colors/font_color = Color(0.34033987, 0.34033906, 0.34033927, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_vwsgn")
+text = "Camera Cave
+"
+
+[node name="SpeakerPlainsButton" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 281.0
+offset_right = 249.0
+offset_bottom = 308.0
+theme_override_colors/font_color = Color(0.34033987, 0.34033906, 0.34033927, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_vwsgn")
+text = "Speaker Plains
+"
+
+[node name="MonitorIsland" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 128.0
+offset_right = 380.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0.34033987, 0.34033906, 0.34033927, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_vwsgn")
+text = "Monitor Island
+"
+
+[node name="PrinterMountainButton" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 353.0
+offset_right = 185.0
+offset_bottom = 380.0
+theme_override_colors/font_color = Color(0.34033987, 0.34033906, 0.34033927, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_vwsgn")
+text = "Printer Mountain
+"
+
+[node name="CPUIslandButton" type="Button" parent="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels"]
+material = SubResource("ShaderMaterial_vumd7")
+layout_mode = 0
+offset_left = 223.0
+offset_top = 357.0
+offset_right = 366.0
+offset_bottom = 384.0
+theme_override_colors/font_color = Color(0.34033987, 0.34033906, 0.34033927, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_vwsgn")
+text = "CPU Cave"
+
+[node name="NameInputScreen" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="NameInputScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NameInputScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="NameInputScreen/CenterContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("3_0ac8u")
+
+[node name="MarginContainer" type="MarginContainer" parent="NameInputScreen/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NameInputScreen/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NameInputScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Mukhang ito ay iyong unang laro, maari ko bang malaman ang pangalan mo?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NameInput" type="LineEdit" parent="NameInputScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Ilagay dito ang pangalan mo"
+alignment = 1
+
+[node name="NameConfirmButton" type="Button" parent="NameInputScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "ITO NAG PANGALAN KO"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme = ExtResource("3_0ac8u")
+theme_override_font_sizes/font_size = 32
+text = "BUMALIK SA MAIN MENU"
+
+[node name="buttonsfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("45_vwsgn")
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("46_n08ig")
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels/KeyboardForrestButton" to="." method="_on_keyboard_forrest_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels/MouseForrestButton2" to="." method="_on_mouse_forrest_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels/CameraCave" to="." method="_on_camera_cave_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels/SpeakerPlainsButton" to="." method="_on_speaker_plains_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels/MonitorIsland" to="." method="_on_monitor_island_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels/PrinterMountainButton" to="." method="_on_printer_mountain_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/HBoxContainer/MarginContainer2/Levels/CPUIslandButton" to="." method="_on_cpu_island_button_pressed"]
+[connection signal="pressed" from="NameInputScreen/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/NameConfirmButton" to="." method="_on_name_confirm_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

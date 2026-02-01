@@ -5,13 +5,13 @@
 
 [resource]
 script = ExtResource("1_oxltd")
-name = "void"
-health = 200.0
-heal = 10.0
-heal_weight = 10
-light_attack_damage = 10.0
-light_attack_weight = 10
-heavy_attack_damage = 5.0
+name = "Tutorial"
+health = 50.0
+heal = 20.0
+heal_weight = 5
+light_attack_damage = 20.0
+light_attack_weight = 30
+heavy_attack_damage = 15.0
 heavy_attack_weight = 10
 skip_weight = 2
 scene = ExtResource("1_dwujf")

@@ -1,0 +1,260 @@
+[gd_scene load_steps=38 format=3 uid="uid://by04kx0d6j5ds"]
+
+[ext_resource type="Script" uid="uid://xib55y6mp6sk" path="res://Scripts/player/player_class/knucles/martial_artist.gd" id="1_l043f"]
+[ext_resource type="Texture2D" uid="uid://dpums4yymglqy" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-00.png" id="1_wsmu7"]
+[ext_resource type="Texture2D" uid="uid://xh8p77pcs2dk" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-01.png" id="2_l043f"]
+[ext_resource type="Texture2D" uid="uid://52ciw71gimt" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-02.png" id="3_btqom"]
+[ext_resource type="Texture2D" uid="uid://bgwj03nnmv7sq" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-03.png" id="4_agigd"]
+[ext_resource type="Texture2D" uid="uid://c8oj1kgap2q6v" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-04.png" id="5_atas6"]
+[ext_resource type="Texture2D" uid="uid://c850iglmu6l02" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-05.png" id="6_72ptp"]
+[ext_resource type="Texture2D" uid="uid://kvo46i88shpm" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-06.png" id="7_pxdtj"]
+[ext_resource type="Texture2D" uid="uid://uajr66w8ugc5" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-07.png" id="8_tf8ao"]
+[ext_resource type="Texture2D" uid="uid://bp551jituss0p" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-08.png" id="9_7mgvf"]
+[ext_resource type="Texture2D" uid="uid://bgbfyvauhxcae" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-09.png" id="10_xw4x8"]
+[ext_resource type="Texture2D" uid="uid://c87ogj55385pn" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-10.png" id="11_3spwn"]
+[ext_resource type="Texture2D" uid="uid://y64tgnd4k1xp" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-11.png" id="12_ctjn1"]
+[ext_resource type="Texture2D" uid="uid://labocqphta2j" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-punch-12.png" id="13_oxrdh"]
+[ext_resource type="Texture2D" uid="uid://dgefjieeyb3xc" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-kick-00.png" id="14_cpden"]
+[ext_resource type="Texture2D" uid="uid://gt13tc6g644q" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-kick-01.png" id="15_oqd55"]
+[ext_resource type="Texture2D" uid="uid://b7plnhdfe0kj2" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-kick-02.png" id="16_2cgl5"]
+[ext_resource type="Texture2D" uid="uid://nl3s0mj6amkp" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-kick-03.png" id="17_l7v6w"]
+[ext_resource type="Texture2D" uid="uid://cquwq54q5h1ew" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-kick-04.png" id="18_swiwp"]
+[ext_resource type="Texture2D" uid="uid://ccgwhhgaxj8ao" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-kick-05.png" id="19_nh4bg"]
+[ext_resource type="Texture2D" uid="uid://br5ejfqdf3q13" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-kick-06.png" id="20_tpfcc"]
+[ext_resource type="Texture2D" uid="uid://ulvy66ckfath" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-kick-07.png" id="21_lqkep"]
+[ext_resource type="Texture2D" uid="uid://ctq54s0f23r1r" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-knock-dwn-00.png" id="22_4nlqb"]
+[ext_resource type="Texture2D" uid="uid://cdoj20kkawi1c" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-knock-dwn-01.png" id="23_2pnmc"]
+[ext_resource type="Texture2D" uid="uid://bcq747i3q5p81" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-knock-dwn-02.png" id="24_0g75t"]
+[ext_resource type="Texture2D" uid="uid://chswjrlb12tui" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-knock-dwn-03.png" id="25_jewsq"]
+[ext_resource type="Texture2D" uid="uid://bgs3dbaw4o3g6" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-knock-dwn-04.png" id="26_dganx"]
+[ext_resource type="Texture2D" uid="uid://c5mi3l3f7pe1q" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-knock-dwn-05.png" id="27_4mo6g"]
+[ext_resource type="Texture2D" uid="uid://gx6htr5j2vmc" path="res://Assets/Player/Adventurer-Hand-Combat/Individual Sprites/adventurer-knock-dwn-06.png" id="28_m4tco"]
+[ext_resource type="Texture2D" uid="uid://dnhi7e2ke3ioi" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-00.png" id="29_j4i1g"]
+[ext_resource type="Texture2D" uid="uid://dtefrg6wuccaw" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-hurt-00.png" id="30_atas6"]
+[ext_resource type="Texture2D" uid="uid://pdw4c3fqy1ig" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-01.png" id="30_v0uvd"]
+[ext_resource type="Texture2D" uid="uid://ci8xd1i0lajln" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-02.png" id="31_62yp8"]
+[ext_resource type="Texture2D" uid="uid://dvfbv2c6id28e" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-hurt-01.png" id="31_72ptp"]
+[ext_resource type="Texture2D" uid="uid://bdm715300o3y8" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-hurt-02.png" id="32_pxdtj"]
+[ext_resource type="Texture2D" uid="uid://b73nkmq8ydn21" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-idle-03.png" id="32_r8xp8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wcfs2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wsmu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l043f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_btqom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_agigd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_atas6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_72ptp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pxdtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tf8ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7mgvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xw4x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3spwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ctjn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oxrdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cpden")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_oqd55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2cgl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_l7v6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_swiwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nh4bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tpfcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lqkep")
+}],
+"loop": false,
+"name": &"barrage",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wsmu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l043f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_btqom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_agigd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_atas6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_72ptp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pxdtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tf8ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7mgvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xw4x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3spwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ctjn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oxrdh")
+}],
+"loop": false,
+"name": &"combo",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_4nlqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_2pnmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_0g75t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_jewsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_dganx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4mo6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_m4tco")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_atas6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_72ptp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_pxdtj")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_j4i1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_v0uvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_62yp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_r8xp8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_cpden")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_oqd55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2cgl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_l7v6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_swiwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nh4bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tpfcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lqkep")
+}],
+"loop": false,
+"name": &"kick",
+"speed": 10.0
+}]
+
+[node name="MartialArtist" type="Node2D" node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("1_l043f")
+animated_sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -17)
+sprite_frames = SubResource("SpriteFrames_wcfs2")
+animation = &"hurt"
+
+[node name="Attack" type="AudioStreamPlayer" parent="."]
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
