@@ -25,7 +25,7 @@ Global="*res://Scripts/global.gd"
 window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_height"
+window/stretch/aspect="keep_width"
 
 [gui]
 
@@ -94,4 +94,5 @@ dash={
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.8123068, 0.89192575, 0.9841837, 1)

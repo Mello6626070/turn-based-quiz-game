@@ -5,7 +5,7 @@ const KEY: String = "3.14159265"
 
 var player_name: String = ""
 var unlocked_level: int = 1
-var is_first_time: bool = false
+var is_first_time: bool = true
 
 func save() -> void:
 	var file: FileAccess = FileAccess.open_encrypted_with_pass(SLOT1, FileAccess.WRITE, KEY)

@@ -11,7 +11,10 @@ func _ready() -> void:
 	player = player_instance.instantiate()
 	add_child(player)
 	if Global.current_world_previous_location:
-		player.global_position = Global.current_world_previous_location + Vector2(50, 0)
+		if Global.current_world == Global.WORLD.MOUSE:
+			player.global_position = Global.current_world_previous_location + Vector2(50, 0)
+		elif Global.current_world == Global.WORLD.PRINTER:
+			player.global_position = Global.current_world_previous_location + Vector2(-50, 0)
 	else:
 		player.global_position = player_spawner.global_position
 	

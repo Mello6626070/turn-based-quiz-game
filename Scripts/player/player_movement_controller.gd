@@ -7,6 +7,7 @@ class_name PlayerMovementController extends CharacterBody2D
 @onready var camera_container: Node2D = $CameraContainer
 @onready var camera_2d: Camera2D = $CameraContainer/Camera2D
 @onready var sfx_player: AudioStreamPlayer = $SfxPlayer
+@onready var control: Control = %Control
 
 @export var player_class_data: PlayerClass
 @export var walking_sfx: AudioStream
@@ -50,9 +51,15 @@ var jump_button: bool = false
 var dash_button: bool = false
 
 func _ready() -> void:
+	if OS.get_name() == "Android" or true:
+		control.show()
+	else:
+		control.hide()
 	set_state(current_state)
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("exit"):
+		get_tree().change_scene_to_file("res://Scenes/level_selection.tscn")
 	process_state(delta)
 	move_and_slide()
 
@@ -213,11 +220,7 @@ func init_dash() -> void:
 	sfx_player.play(0.38)
 	velocity.y = 0
 	var input: float
-	
-	if button_direction != 0:
-		input = signf(button_direction)
-	else:
-		input = signf(Input.get_axis("left", "right"))
+	input = signf(Input.get_axis("left", "right"))
 	
 	if previous_state != STATE.WALL_SLIDE:
 		set_facing_direction(input)
@@ -281,11 +284,16 @@ func _on_right_button_button_up() -> void:
 
 
 func _on_jump_button_button_down() -> void:
-	jump_button = true
+	if current_state == STATE.GROUND:
+		set_state(STATE.JUMP)
 
 func _on_jump_button_button_up() -> void:
-	jump_button = false
+	pass
 
 func _on_dash_button_pressed() -> void:
 	if can_dash:
 		set_state(STATE.DASH)
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/level_selection.tscn")

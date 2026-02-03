@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://d1vdld22ypi6p"]
+[gd_scene load_steps=37 format=3 uid="uid://d1vdld22ypi6p"]
 
 [ext_resource type="Script" uid="uid://b6wjh3vkh3yp4" path="res://Scripts/player/player_movement_controller.gd" id="1_1uogl"]
 [ext_resource type="Texture2D" uid="uid://vuq2ny58d4as" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-fall-00.png" id="1_dj1cc"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://br2o40j1tx2f2" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-wall-slide-00.png" id="22_tikcl"]
 [ext_resource type="Texture2D" uid="uid://ckjyddpxm5x7q" path="res://Assets/Player/Adventurer-1.5/Individual Sprites/adventurer-wall-slide-01.png" id="23_5hk5m"]
 [ext_resource type="PackedScene" uid="uid://dkn5mk23dyvvr" path="res://Scenes/player/crteffect.tscn" id="26_5v12h"]
+[ext_resource type="Texture2D" uid="uid://7hx5rlwx6bf3" path="res://Assets/UI Assets pack_v.1_st/UI.png" id="29_5ch6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1d0ep"]
 size = Vector2(10, 27)
@@ -148,6 +149,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v8ry"]
+atlas = ExtResource("29_5ch6t")
+region = Rect2(929, 80, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq5xf"]
+atlas = ExtResource("29_5ch6t")
+region = Rect2(1007, 80, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ch6t"]
+atlas = ExtResource("29_5ch6t")
+region = Rect2(976, 81, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prcox"]
+atlas = ExtResource("29_5ch6t")
+region = Rect2(1025, 81, 14, 15)
+
 [node name="PlayerMovementController" type="CharacterBody2D"]
 collision_mask = 2091
 script = ExtResource("1_1uogl")
@@ -191,14 +208,13 @@ limit_enabled = false
 limit_smoothed = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraContainer/Camera2D"]
-visible = false
 
 [node name="Control" type="Control" parent="CameraContainer/Camera2D/CanvasLayer"]
+unique_name_in_owner = true
 layout_mode = 3
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -214,36 +230,40 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer"]
-layout_mode = 2
+[node name="Right" type="TouchScreenButton" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer"]
+position = Vector2(216, 496)
+scale = Vector2(8, 8)
+texture_normal = SubResource("AtlasTexture_3v8ry")
+action = "right"
+visibility_mode = 1
 
-[node name="LeftButton" type="Button" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(72, 72)
-layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "<"
+[node name="Left" type="TouchScreenButton" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer"]
+position = Vector2(64, 496)
+scale = Vector2(8, 8)
+texture_normal = SubResource("AtlasTexture_aq5xf")
+action = "left"
+visibility_mode = 1
 
-[node name="RightButton" type="Button" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(72, 72)
-layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = ">"
+[node name="Jump" type="TouchScreenButton" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer"]
+position = Vector2(1112, 504)
+rotation = 1.5707964
+scale = Vector2(8, 8)
+texture_normal = SubResource("AtlasTexture_5ch6t")
+action = "jump"
+visibility_mode = 1
 
-[node name="Control" type="Control" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer"]
+[node name="ExitButton" type="Button" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "EXIT"
 
-[node name="JumpButton" type="Button" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(72, 72)
-layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = "^"
-
-[node name="DashButton" type="Button" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(72, 72)
-layout_mode = 2
-theme_override_font_sizes/font_size = 72
-text = ">>"
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer"]
+position = Vector2(1024, 384)
+scale = Vector2(8, 8)
+texture_normal = SubResource("AtlasTexture_prcox")
+action = "interact"
 
 [node name="crteffect" parent="." instance=ExtResource("26_5v12h")]
 visible = false
@@ -252,11 +272,5 @@ visible = false
 volume_db = -5.0
 pitch_scale = 0.81
 
-[connection signal="button_down" from="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer/LeftButton" to="." method="_on_left_button_button_down"]
-[connection signal="button_up" from="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer/LeftButton" to="." method="_on_left_button_button_up"]
-[connection signal="button_down" from="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer/RightButton" to="." method="_on_right_button_button_down"]
-[connection signal="button_up" from="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer/RightButton" to="." method="_on_right_button_button_up"]
-[connection signal="button_down" from="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer/JumpButton" to="." method="_on_jump_button_button_down"]
-[connection signal="button_up" from="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer/JumpButton" to="." method="_on_jump_button_button_up"]
-[connection signal="pressed" from="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/HBoxContainer/DashButton" to="." method="_on_dash_button_pressed"]
+[connection signal="pressed" from="CameraContainer/Camera2D/CanvasLayer/Control/MarginContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="finished" from="SfxPlayer" to="." method="_on_sfx_player_finished"]
