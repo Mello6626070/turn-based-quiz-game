@@ -17,7 +17,7 @@ signal question_time_out()
 @export var monitor_questions: Array[Question]
 @export var printer_questions: Array[Question]
 @export var cpu_questions: Array[Question]
-@export var divisor: float = 2
+@export var divisor: float = 1.5
 @export var converter: float = 1000
 
 var current_question: Question

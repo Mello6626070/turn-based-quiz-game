@@ -1812,7 +1812,7 @@ metadata/_custom_type_script = "uid://di4x8wm82w235"
 
 [sub_resource type="Resource" id="Resource_68wd7"]
 script = ExtResource("17_p0bn4")
-text = "Ano ang gagawin mo kung biglang hindi gumana ang mouse mo habang gumagawa "
+text = "Ano ang gagawin mo kung biglang hindi gumana ang mouse mo habang gumagawa ng assignment"
 answers = Array[ExtResource("18_padob")]([SubResource("Resource_4rhmk"), SubResource("Resource_wwfds"), SubResource("Resource_ru3h8")])
 audio = ExtResource("19_68wd7")
 metadata/_custom_type_script = "uid://bgf0lyvq07naj"
@@ -1858,7 +1858,7 @@ metadata/_custom_type_script = "uid://di4x8wm82w235"
 
 [sub_resource type="Resource" id="Resource_x3xkk"]
 script = ExtResource("17_p0bn4")
-text = "bakit ginagamit ang camera sa video call sa klase?"
+text = "Bakit ginagamit ang camera sa video call sa klase?"
 answers = Array[ExtResource("18_padob")]([SubResource("Resource_gj26u"), SubResource("Resource_h6p2q"), SubResource("Resource_5qwsp")])
 audio = ExtResource("21_20vj6")
 metadata/_custom_type_script = "uid://bgf0lyvq07naj"
@@ -2523,7 +2523,7 @@ autowrap_mode = 2
 
 [node name="QuestionTimer" type="Timer" parent="ArenaCamera/CanvasLayer/UI/Screen/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/QuestionairePanel"]
 unique_name_in_owner = true
-wait_time = 10.0
+wait_time = 15.0
 one_shot = true
 
 [node name="SkillSelectionPanel" type="HBoxContainer" parent="ArenaCamera/CanvasLayer/UI/Screen/VBoxContainer/MarginContainer/PanelContainer/MarginContainer"]
