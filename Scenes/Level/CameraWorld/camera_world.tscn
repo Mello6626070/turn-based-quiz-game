@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://chbqx7y5m0e5n"]
+[gd_scene load_steps=14 format=4 uid="uid://chbqx7y5m0e5n"]
 
 [ext_resource type="Script" uid="uid://dsb5itaw7lyy0" path="res://Scenes/Level/CameraWorld/camera_world.gd" id="1_gkjjs"]
 [ext_resource type="Texture2D" uid="uid://cd8o11mcyhncy" path="res://Assets/PixelFantasy_Caves_1.0/background1.png" id="1_ongdh"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://brleuwkbg6cbb" path="res://Assets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="5_kbhs1"]
 [ext_resource type="PackedScene" uid="uid://d1vdld22ypi6p" path="res://Scenes/player/player_movement_controller.tscn" id="6_057ty"]
 [ext_resource type="PackedScene" uid="uid://sjon4r6s0gjr" path="res://Scenes/enemy/player_enemy_encounter_detector.tscn" id="7_2o3i8"]
-[ext_resource type="Resource" uid="uid://dx7v02bmvn1j7" path="res://Scripts/enemy/skeleton.tres" id="8_gkjjs"]
 [ext_resource type="Resource" uid="uid://dt7iaunmol87v" path="res://Scripts/enemy/goblin.tres" id="9_br2m2"]
 [ext_resource type="PackedScene" uid="uid://c815wojrre5qh" path="res://Scenes/level_transporter.tscn" id="11_br2m2"]
 [ext_resource type="AudioStream" uid="uid://3giuxf1b0ti" path="res://Assets/mixkit-drumming-jungle-music-2426.wav" id="12_vjpcy"]
@@ -652,17 +651,8 @@ tile_set = SubResource("TileSet_057ty")
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="PlayerEnemyEncounterDetector" parent="Enemies" instance=ExtResource("7_2o3i8")]
-position = Vector2(339, 0)
-enemy_data = ExtResource("8_gkjjs")
-
-[node name="PlayerEnemyEncounterDetector2" parent="Enemies" instance=ExtResource("7_2o3i8")]
-position = Vector2(808, 96)
-enemy_data = ExtResource("8_gkjjs")
-index = 1
-
 [node name="PlayerEnemyEncounterDetector3" parent="Enemies" instance=ExtResource("7_2o3i8")]
-position = Vector2(1546, -80)
+position = Vector2(1419, -80)
 enemy_data = ExtResource("9_br2m2")
 index = 3
 

@@ -13,6 +13,7 @@ extends Node2D
 @export var transition_duration: float = 0.8
 
 @onready var state_transition_timer: Timer = %StateTransitionTimer
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 @onready var state_debug_label: Label = %StateDebugLabel
 
@@ -67,7 +68,8 @@ func _process(delta: float) -> void:
 	process_state()
 
 func set_state(to_state: STATE) -> void:
-	previous_state = current_state
+	if current_state != STATE.STATE_TRANSITION:
+		previous_state = current_state
 	current_state = to_state
 	
 	match current_state:
@@ -189,6 +191,8 @@ func init_enemy() -> void:
 	ui.set_enemy_panel(enemy_name, enemy_health)
 
 func player_turn_end() -> void:
+	if previous_state == STATE.PLAYER_ATTACK:
+		animation_player.play_backwards("player_attack")
 	if enemy_health > 0:
 		target_state = STATE.ENEMY_TURN
 		set_state(STATE.STATE_TRANSITION)
@@ -196,6 +200,8 @@ func player_turn_end() -> void:
 		set_state(STATE.ENEMY_DEATH)
 
 func enemy_turn_end() -> void:
+	if previous_state == STATE.ENEMY_ATTACK:
+		animation_player.play_backwards("enemy_attack")
 	if player_health > 0:
 		target_state = STATE.PLAYER_TURN
 		set_state(STATE.STATE_TRANSITION)
@@ -230,6 +236,9 @@ func start_restore_mana() -> void:
 	set_state(STATE.STATE_TRANSITION)
 
 func start_attack() -> void:
+	if player_class.name != "Bow":
+		animation_player.play("player_attack")
+		await animation_player.animation_finished
 	player_mana -= selected_skill.mana_cost
 	if player_mana <= 0:
 		player_mana = 0
@@ -270,6 +279,8 @@ func start_time_out() -> void:
 	set_state(STATE.STATE_TRANSITION)
 
 func start_enemy_attack() -> void:
+	animation_player.play("enemy_attack")
+	await animation_player.animation_finished
 	var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 	rng.seed = Time.get_ticks_msec()
 	var weight_total: int = enemy_type.light_attack_damage + enemy_type.heavy_attack_damage

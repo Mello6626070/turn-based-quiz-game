@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bp6aqp0r3m8xj" path="res://Scripts/intro_scene.gd" id="1_a0grg"]
 [ext_resource type="Shader" uid="uid://b6ia5jaxf38d6" path="res://Scripts/bg.gdshader" id="1_c5jd6"]
 [ext_resource type="PackedScene" uid="uid://dkn5mk23dyvvr" path="res://Scenes/player/crteffect.tscn" id="2_14uik"]
-[ext_resource type="AudioStream" uid="uid://c6wro031s8l5b" path="res://Assets/VoiceLine/isolated_audio.mp3" id="4_fqfc0"]
+[ext_resource type="AudioStream" uid="uid://c1w7orlngs7hb" path="res://Assets/isolated_audio_intro.mp3" id="4_fqfc0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_14uik"]
 shader = ExtResource("1_c5jd6")
@@ -59,7 +59,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(1152, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
-text = "Pumasok ka sa Computer World! Tingnan mo ang mga kaibigan natin—keyboard, mouse, camera, monitor, printer, speaker, at CPU. Sinasakop ng masasamang Virus! Simulan natin sa Keyboard Forest.  Tingnan mo ang mga puno na hugis letra!"
+text = "Pumasok ka sa Computer World! Tingnan mo ang mga kaibigan natin—keyboard, mouse, camera, monitor, printer, speaker, at CPU. Sinasakop ng masasamang Virus! Simulan natin sa Keyboard Forest. "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

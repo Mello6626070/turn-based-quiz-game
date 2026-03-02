@@ -19,9 +19,6 @@ func _physics_process(delta: float) -> void:
 	label.visible_ratio = current_ratio
 	if label.visible_ratio == 1:
 		continue_button.show()
-	
-	if audio_stream_player.get_playback_position() >= 15.0:
-		audio_stream_player.stop()
 
 
 func _on_continue_button_pressed() -> void:

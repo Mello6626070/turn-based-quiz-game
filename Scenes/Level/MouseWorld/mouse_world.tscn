@@ -708,19 +708,8 @@ texture = ExtResource("4_8fnsf")
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="PlayerEnemyEncounterDetector" parent="Enemies" instance=ExtResource("6_8d1my")]
-position = Vector2(-743, -223)
-scale = Vector2(-1, 1)
-enemy_data = ExtResource("7_7gxx3")
-
-[node name="PlayerEnemyEncounterDetector2" parent="Enemies" instance=ExtResource("6_8d1my")]
-position = Vector2(-1802, -244)
-scale = Vector2(-1, 1)
-enemy_data = ExtResource("7_7gxx3")
-index = 2
-
 [node name="PlayerEnemyEncounterDetector3" parent="Enemies" instance=ExtResource("6_8d1my")]
-position = Vector2(-2386, -237)
+position = Vector2(-1997, -237)
 scale = Vector2(-1, 1)
 enemy_data = ExtResource("7_7gxx3")
 index = 3

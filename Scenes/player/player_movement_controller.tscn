@@ -264,6 +264,7 @@ position = Vector2(1024, 384)
 scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_prcox")
 action = "interact"
+visibility_mode = 1
 
 [node name="crteffect" parent="." instance=ExtResource("26_5v12h")]
 visible = false

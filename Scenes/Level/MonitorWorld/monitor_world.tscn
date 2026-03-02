@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://btkum2w57wfkt"]
+[gd_scene load_steps=17 format=4 uid="uid://btkum2w57wfkt"]
 
 [ext_resource type="Script" uid="uid://b0jwctx8mwqa1" path="res://Scenes/Level/KeyboardWorld/keyboard_world.gd" id="1_td7o3"]
 [ext_resource type="PackedScene" uid="uid://d1vdld22ypi6p" path="res://Scenes/player/player_movement_controller.tscn" id="2_vuvqx"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://oj41vi78m3qn" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="6_ocaxh"]
 [ext_resource type="Texture2D" uid="uid://cbihupad6ucm7" path="res://Assets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 1.png" id="7_61ro5"]
 [ext_resource type="PackedScene" uid="uid://sjon4r6s0gjr" path="res://Scenes/enemy/player_enemy_encounter_detector.tscn" id="8_63cjj"]
-[ext_resource type="Resource" uid="uid://dx7v02bmvn1j7" path="res://Scripts/enemy/skeleton.tres" id="9_kkf8r"]
 [ext_resource type="Texture2D" uid="uid://cb17t3ays4gen" path="res://Assets/GandalfHardcore FREE Platformer Assets/BG Dirt1.png" id="10_i2ybf"]
 [ext_resource type="Resource" uid="uid://dt7iaunmol87v" path="res://Scripts/enemy/goblin.tres" id="10_otjew"]
 [ext_resource type="Texture2D" uid="uid://brleuwkbg6cbb" path="res://Assets/GandalfHardcore FREE Platformer Assets/Floor Tiles1.png" id="11_6la3f"]
@@ -811,22 +810,8 @@ texture = ExtResource("7_61ro5")
 [node name="Enemies" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="PlayerEnemyEncounterDetector" parent="Enemies" instance=ExtResource("8_63cjj")]
-position = Vector2(459, -65)
-enemy_data = ExtResource("9_kkf8r")
-
-[node name="PlayerEnemyEncounterDetector2" parent="Enemies" instance=ExtResource("8_63cjj")]
-position = Vector2(1092, -156)
-enemy_data = ExtResource("9_kkf8r")
-index = 1
-
-[node name="PlayerEnemyEncounterDetector3" parent="Enemies" instance=ExtResource("8_63cjj")]
-position = Vector2(1851, -156)
-enemy_data = ExtResource("10_otjew")
-index = 2
-
 [node name="PlayerEnemyEncounterDetector4" parent="Enemies" instance=ExtResource("8_63cjj")]
-position = Vector2(2306, -14)
+position = Vector2(1839, -164)
 enemy_data = ExtResource("10_otjew")
 index = 5
 
